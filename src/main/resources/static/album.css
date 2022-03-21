@@ -1,0 +1,41 @@
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+body{
+background: #c4c1e0;
+font-family: "Roboto", sans-serif;
+}
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  width: 36%;
+  height: 42%;
+  margin-bottom: 30px;
+}
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+.album-content {
+padding: 2px 16px;
+background: #714288;
+color: white;
+height: 175px;
+}
+
+ h4{
+    font-size: 4vh;
+}
+
+ p{
+    font-size: 3vh;
+}
+
+header {
+color: purple;
+margin-bottom: 50px;
+}
+h1 {
+margin-left: 33%;
+}
