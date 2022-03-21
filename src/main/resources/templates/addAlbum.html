@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Add album</title>
+    <link th:href="@{/addAlbum.css}" rel="stylesheet"/>
+</head>
+<body>
+<div class="addAlb">
+<form action="/addAlbum" method="post">
+    <div class="inp">
+        <label class="Label">Title</label>
+        <input type="text"  name="title">
+    </div>
+    <div class="inp">
+        <label class="Label">Artist</label>
+        <input type="text"  name="artist">
+    </div>
+    <div class="inp">
+        <label class="Label">Number of songs</label>
+        <input type="number"  name="songCount">
+    </div>
+    <div class="inp">
+        <label class="Label">Length in seconds</label>
+        <input type="number"  name="length">
+    </div>
+    <div class="inp">
+        <label class="Label">Cover</label>
+        <input type="String"  name="imageUrl">
+    </div>
+
+    <button type="submit" >Submit</button>
+</form>
+</div>
+</body>
+</html>
