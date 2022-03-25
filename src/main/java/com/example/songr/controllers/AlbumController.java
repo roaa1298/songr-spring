@@ -5,10 +5,7 @@ import com.example.songr.repositories.AlbumRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.view.RedirectView;
 
 import java.util.ArrayList;
@@ -54,6 +51,20 @@ public class AlbumController {
     public String getAllAlbums(Model model){
         model.addAttribute("albumsList",albumRepository.findAll());
         return "album";
+    }
+
+    @PostMapping("/albums")
+    public RedirectView addSongWithId(Long id){
+
+        return new RedirectView("/addSong/"+id);
+    }
+
+    @GetMapping("/albums/{id}/songs")
+    public String viewAlbumSongs(@PathVariable Long id, Model model){
+        Album album = albumRepository.findById(id).orElseThrow();
+        model.addAttribute("songs", album.getSongs());
+        model.addAttribute("album", album);
+        return "albumInfo";
     }
 
 
