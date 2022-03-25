@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link th:href="@{/albumInfo.css}" rel="stylesheet"/>
+</head>
+<body>
+<h1 th:text=${album.title}></h1>
+<div>
+    <div th:each="song : ${songs}" class="card" >
+        <div class="song-info">
+            <p>Song Title: <span th:text="${song.title}"></span></p>
+            <p>Song Length: <span th:text="${song.length}"></span></p>
+            <p>Song TrackNumber: <span th:text="${song.trackNumber}"></span></p>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

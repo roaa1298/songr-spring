@@ -9,14 +9,22 @@
 <header>
 <h1>Album List</h1>
 </header>
+<div class="id-form">
+<form action="/albums" method="post">
+    <label class="form-label">Add songs for album with id: </label><br>
+    <input type="text" name="id"  required /><br>
+    <button type="submit" >Submit</button>
+</form>
+</div>
 <div class="albums">
     <div class="card" th:each="albumElement : ${albumsList}">
         <img th:src="${albumElement.imageUrl}" alt="Album" style="width:100%">
             <div class="album-content">
-            <h4 class="AlbumTitle"><b>Album: <span th:text="${albumElement.title}"></span></b></h4>
-            <p class="AlbumArtist">Artist: <span th:text="${albumElement.artist}"></span></p>
-            <p class="AlbumNum">Number of songs: <span th:text="${albumElement.songCount}"></span></p>
-            <p class="AlbumLength">Length in seconds: <span th:text="${albumElement.length}"></span></p>
+                <h4 class="AlbumTitle"><b>Album: <span th:text="${albumElement.title}"></span></b></h4>
+                <h5 class="AlbumId"><b>Album id: <span th:text="${albumElement.id}"></span></b></h5>
+                <p class="AlbumArtist">Artist: <span th:text="${albumElement.artist}"></span></p>
+                <p class="AlbumNum">Number of songs: <span th:text="${albumElement.songCount}"></span></p>
+                <p class="AlbumLength">Length in seconds: <span th:text="${albumElement.length}"></span></p>
             </div>
     </div>
 </div>
